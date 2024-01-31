@@ -1,0 +1,41 @@
+{% extends 'birthdays/base.html' %}
+{% block Encabezado %}
+    <h1>Cumpleañeros del Mes</h1>
+{% endblock %}
+
+{% block panelIzquierdo %}
+    <h2>Personal list</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Alias</th>
+                <th>Apellido</th>
+                <th>Birthday</th>
+                <th>Picture</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for personal in personals %}
+            <tr>
+                <td>{{ personal.nombre }}</td>
+                <td><a href="http://127.0.0.1:8000/personal/{{ personal.id }}/">({{ personal.alias }})</a> </td>
+                <td>{{ personal.apellido }}</td>
+                <td>{{ personal.birthday }}</td>
+                <td>
+                    {% if personal.picture %}
+                    <img src="{{ personal.picture.url }}" alt="{{ personal.alias }}" width="200">
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No entries yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block panelDerecho %}
+    <a href="localhost:8000/personal/globos">link </a>
+{% endblock %}

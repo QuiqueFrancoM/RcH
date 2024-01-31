@@ -1,0 +1,15 @@
+{% extends 'birthdays/base.html' %}
+{% block panelDerecho %}
+
+    <h1>Círculos</h1>
+    <h2 draggable ="true">inicio</h2>
+    <svg  width="400" height="400" xmlns="http://www.w3.org/2000/svg" >
+        <rect height="100%" width="100%" fill="yellow"></rect>
+        {% for h in balloon %}
+            <circle  r="{{ h.diam }}" cx="{{ h.x }}" cy="{{ h.y }}" stroke="red" fill="{{ h.color }}" fill-opacity="50%"></circle>
+            <text x="{{ h.x }}" y="{{ h.y }}" font-size="15"  font-weight="700" font-family="sans-serif" fill="blue" fill-opacity=".5" >{{ h.numero }}.-{{ h.nombre }}({{ forloop.counter }})</text>
+
+        {% endfor %}
+    </svg>
+<h2>fin</h2>
+{% endblock %}

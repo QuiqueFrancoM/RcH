@@ -1,0 +1,14 @@
+{% extends 'birthdays/base.html' %}
+{% block Encabezado %}<h1 align="center">Cumpleañero de Hoy</h1>{% endblock %}
+
+{% block panelDerecho %}
+    <b></b>
+    <a href="http://127.0.0.1:8000/personal/{{ person.id }}/">{{ person.alias }}</a>
+    <H2>{{ person.nombre }} {{ person.apellido }}</H2>
+    <H2>{{ person.birthday }}</H2>
+    <H2>
+        {% if person.picture %}
+             <img src="{{ person.picture.url }}" alt="{{ person.alias }}" WIDTH="200">
+        {% endif %}
+    </H2>
+{% endblock %}

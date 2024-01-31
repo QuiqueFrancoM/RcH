@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}{% endblock %}</title>
+<!--
+    <link rel="stylesheet" href="//static/birthdays/styles.css">
+-->
+</head>
+<body>
+<table width="100%" border="2">
+    <tr>
+        <td width="100%" colspan="2">
+            {% block Encabezado %}
+            	<h1 align="center">Encabezado</h1>
+            {% endblock %}
+
+        </td>
+    </tr>
+    <tr>
+        <td width="20%">
+            {% block panelIzquierdo %}
+            	<h2>panel izquierdo</h2>
+            {% endblock %}
+
+        </td>
+        <td >
+            {% block panelDerecho %}
+            	<h2>panel derecho</h2>
+            {% endblock %}
+        </td>
+    </tr>
+</table>
+</body>
+</html>
