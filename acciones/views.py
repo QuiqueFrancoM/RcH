@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
+from .models import acciones, persona
 def home(request):
     return http.HttpResponse("Página Raiz del proyecto")
 def index(request):
@@ -9,7 +10,10 @@ def index(request):
     return render(request, 'acciones/base.html', {'x': x})
 
 def lista_acciones(request):
-    return HttpResponse("<h1>Lista de acciones</h1>")
+    #return HttpResponse("<h1>Lista de acciones</h1>")
+    Lacciones = acciones.objects.all()
+    print(Lacciones)
+    return render(request, 'acciones/ListaAcciones.html', {'Lacciones': Lacciones})
 
 def accion_numero(request, id):
     return HttpResponse("<h1>Acción #"+str(id)+"</h1>")

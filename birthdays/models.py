@@ -5,7 +5,7 @@ class personal(models.Model):
     alias = models.CharField(max_length=30)
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
-    birthday = models.DateField()
+    birthday = models.DateField(null=True)
     picture = models.ImageField(upload_to='imagenes', null=True, blank=True)
 
     def __str__(self):
