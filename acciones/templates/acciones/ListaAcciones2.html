@@ -5,29 +5,31 @@
     <link rel="stylesheet" href="{% static 'acciones/lista_acciones.css' %}"/>
 {% endblock %}
 {% block cuerpo %}
-<div class="titulo">
-<h1 class="josefin-sans-franco">Lista de Acciones</h1>
+<div class="titulo josefin-sans-franco">
+<h1>Lista de Acciones</h1>
 </div>
 <div class="tabla1">
         {% for accion in Lacciones %}
-        <div class="renglon">
-            <div><b>{{ accion.pk }}.-{{ accion.titulo }}</b></div>
-            <div><a href="/acciones/34">({{ accion.origen }})</a> </div>
-            <div>
-                {% if accion.foto %}
-                <img id="redondo" src="{{ accion.foto.url }}" alt="{{ accion.titulo }}" >
-                {% endif %}
+            <a class="enlace-discreto" href="/acciones/{{ accion.pk }}" style="">
+            <div class="renglon">
+                <div><b>{{ accion.pk }}.-{{ accion.titulo }}</b></div>
+                <div>({{ accion.origen }})</div>
+                <div>
+                    {% if accion.foto %}
+                    <img id="redondo" src="{{ accion.foto.url }}" alt="{{ accion.titulo }}" >
+                    {% endif %}
+                </div>
+                <div>Creado por: <b>{{ accion.creador }}</b></div>
+                <div>Resp.: <b>{{ accion.responsable }}</b></div>
+                <div>Fecha Límite:<b> {{ accion.fecha_modificacion|date:'j F y' }}</b></div>
+                <div><p>{{ accion.descripcion|truncatechars:50 }}...</p></div>
+                <div >pr.({{ accion.prioridad }})</div>
             </div>
-            <div>Creado por: <b>{{ accion.creador }}</b></div>
-            <div>Resp.: <b>{{ accion.responsable }}</b></div>
-            <div>Fecha Límite:<b> {{ accion.fecha_modificacion|date:'j F y' }}</b></div>
-            <div><p>{{ accion.descripcion|truncatechars:50 }}...</p></div>
-            <div >pr.({{ accion.prioridad }})</div>
-        </div>
-        {% empty %}
-        <tr>
-            <td colspan="5">No entries yet.</td>
-        </tr>
+            </a>
+            {% empty %}
+            <tr>
+                <td colspan="5">No entries yet.</td>
+            </tr>
         {% endfor %}
 </div>
 

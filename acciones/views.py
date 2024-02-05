@@ -15,7 +15,10 @@ def lista_acciones(request):
     return render(request, 'acciones/ListaAcciones2.html', {'Lacciones': Lacciones})
 
 def accion_numero(request, id):
-    return HttpResponse("<h1>Acción #"+str(id)+"</h1>")
+    accionN = acciones.objects.get(pk = id)
+    return render(request, 'acciones/accionNo.html', context={
+        'id':id,
+        'accionN':accionN})
 
 def accion_nombre(request, nombre):
     return HttpResponse("<h1>Acción con slug "+ nombre+ "</h1>")

@@ -1,0 +1,27 @@
+{% extends 'acciones/base.html' %}
+{% load static %}
+{% block titulo %}Acción No. {{ id }}{% endblock %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'acciones/lista_acciones.css' %}"/>
+{% endblock %}
+{% block cuerpo %}
+<div class="titulo josefin-sans-franco">
+    <div><h1>Acción No. {{ id }}  ({{ accionN.titulo }})</h1></div>
+    <div><a class="enlace-discreto" href="/acciones/todas" ><h2>Listado Acciones</h2></a></div>
+</div>
+<div class="tabla2">
+    <div>
+        {% if accionN.foto %}
+        <img id="completa" src="{{ accionN.foto.url }}" alt="{{ accionN.titulo }}" >
+        {% endif %}
+    </div>
+    <div class="josefin-sans-franco">
+        <div><a href="">Orígen: {{ accionN.origen }}</a> </div>
+        <div>Creado por: <b>{{ accionN.creador }}</b></div>
+        <div>Resp.: <b>{{ accionN.responsable }}</b></div>
+        <div>Fecha Límite:<b> {{ accionN.fecha_modificacion|date:'j F y' }}</b></div>
+        <div><p>{{ accionN.descripcion}}</p></div>
+        <div >pr.({{ accionN.prioridad }})</div>
+    </div>
+</div>
+{% endblock %}

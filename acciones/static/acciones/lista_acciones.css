@@ -1,3 +1,7 @@
+div{
+    color: inherit;
+    text-decoration-color: beige;
+}
 #redondo{
     width: 8rem;
     height: 8rem;
@@ -5,6 +9,15 @@
     border: 5px solid purple;
     border-radius: 50%;
     padding: 5px;
+}
+#completa{
+    width: 20rem;
+    height: auto;
+    object-fit: cover;
+    border: 5px solid black;
+    border-radius: 10%;
+    padding: 5px;
+    margin: 2rem 1rem 2rem 1rem;
 }
 
 .josefin-sans-franco {
@@ -16,17 +29,20 @@
 
 .titulo{
     background-color: purple;
-    color: white;
+    text-decoration-color: beige;
     display: flex;
+    flex-direction: row;
+    color: white;
     height: 7rem;
     border-color: purple;
-    margin: 0;
+    align-items: center;
+    justify-content: space-around;
     padding: 0;
-    justify-content: center;
-    align-content: center;
+    margin: 0;
 }
 
 .tabla1{
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -42,6 +58,7 @@
 
 .renglon{
     font-family: "Josefin Sans", sans-serif;
+    text-decoration: none;
     border: 3px solid rebeccapurple;
     background-color: beige;
     border-radius: 10px;
@@ -57,4 +74,26 @@
 }
 .renglon p{
     color: blue;
+}
+.tabla2{
+    font-size: 20pt;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    border-radius: 10px;
+    border: 5px solid rebeccapurple;
+    background-color: rgba(128, 128, 128, 0.75);
+    padding: 1rem;
+    margin: -3rem 2rem 2rem 2rem;
+
+}
+.tabla2 p{
+    font-size: 18pt;
+    color: darkblue;
+}
+.enlace-discreto{
+    color:inherit;
+    text-decoration: none;
 }
