@@ -19,6 +19,11 @@ class acciones(models.Model):
     fecha_modificacion = models.DateField(auto_now=True)
     responsable = models.ForeignKey(persona, on_delete=models.DO_NOTHING, null=True, related_name='responsable')
     descripcion = models.TextField(null=True, blank=True)
+    terminada = models.BooleanField(default=False)
+    prioridad = models.IntegerField(default=10, null=True)
+    fecha_prog_inicio = models.DateField(null=True, blank=True)
+    fecha_prog_fin = models.DateField(null=True, blank=True)
+
     foto = models.ImageField(upload_to='./static/images/acciones', null=True, blank=True)
     def __str__(self):
         return self.titulo

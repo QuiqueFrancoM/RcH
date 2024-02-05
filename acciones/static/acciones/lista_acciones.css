@@ -1,0 +1,60 @@
+#redondo{
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    border: 5px solid purple;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.josefin-sans-franco {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.titulo{
+    background-color: purple;
+    color: white;
+    display: flex;
+    height: 7rem;
+    border-color: purple;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-content: center;
+}
+
+.tabla1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border: 5px solid rebeccapurple;
+    background-color: rgba(128, 128, 128, 0.75);
+    padding: 1rem;
+    margin: -3rem 2rem 2rem 2rem;
+
+}
+
+.renglon{
+    font-family: "Josefin Sans", sans-serif;
+    border: 3px solid rebeccapurple;
+    background-color: beige;
+    border-radius: 10px;
+    width: 14rem;
+    height: 20rem;
+    padding: 40px 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.renglon p{
+    color: blue;
+}

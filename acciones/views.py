@@ -11,9 +11,8 @@ def index(request):
 
 def lista_acciones(request):
     #return HttpResponse("<h1>Lista de acciones</h1>")
-    Lacciones = acciones.objects.all()
-    print(Lacciones)
-    return render(request, 'acciones/ListaAcciones.html', {'Lacciones': Lacciones})
+    Lacciones = acciones.objects.all().order_by('prioridad')
+    return render(request, 'acciones/ListaAcciones2.html', {'Lacciones': Lacciones})
 
 def accion_numero(request, id):
     return HttpResponse("<h1>Acción #"+str(id)+"</h1>")

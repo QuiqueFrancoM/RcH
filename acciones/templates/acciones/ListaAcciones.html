@@ -1,8 +1,14 @@
 {% extends 'acciones/base.html' %}
-
+{% load static %}
+{% block titulo %}Lista{% endblock %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'acciones/lista_acciones.css' %}"/>
+{% endblock %}
 {% block cuerpo %}
-<h2>Personal list</h2>
-    <table>
+<h1 class="josefin-sans-franco" align="center">Lista de Acciones</h1>
+    <div class="tabla1">
+    <table border="5px solid blue" >
+        <div>
         <thead>
             <tr>
                 <th>Título</th>
@@ -12,16 +18,18 @@
                 <th>Picture</th>
             </tr>
         </thead>
+        </div>
+        <div border="3px solid green">
         <tbody>
             {% for accion in Lacciones %}
-            <tr>
+            <tr class="renglon">
                 <td>{{ accion.titulo }}</td>
                 <td><a href="http://127.0.0.1:8000/personal/{{ accion.id }}/">({{ accion.titulo }})</a> </td>
                 <td>{{ accion.origen }}</td>
                 <td>{{ accion.responsable }}</td>
                 <td>
                     {% if accion.foto %}
-                    <img src="{{ accion.foto.url }}" alt="{{ accion.titulo }}" width="200">
+                    <img id="redondo" class="welcome" src="{{ accion.foto.url }}" alt="{{ accion.titulo }}" width=50px>
                     {% endif %}
                 </td>
             </tr>
@@ -31,5 +39,7 @@
             </tr>
             {% endfor %}
         </tbody>
+        </div>
     </table>
+    </div>
 {% endblock %}
