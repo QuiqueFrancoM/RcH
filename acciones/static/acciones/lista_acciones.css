@@ -32,6 +32,7 @@ div{
     text-decoration-color: beige;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     color: white;
     height: 7rem;
     border-color: purple;
@@ -52,7 +53,7 @@ div{
     border: 5px solid rebeccapurple;
     background-color: rgba(128, 128, 128, 0.75);
     padding: 1rem;
-    margin: -3rem 2rem 2rem 2rem;
+    margin: -1rem 2rem 2rem 2rem;
 
 }
 
@@ -76,22 +77,26 @@ div{
     color: blue;
 }
 .tabla2{
-    font-size: 20pt;
+    font-size: 18pt;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-evenly;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     border-radius: 10px;
     border: 5px solid rebeccapurple;
     background-color: rgba(128, 128, 128, 0.75);
-    padding: 1rem;
-    margin: -3rem 2rem 2rem 2rem;
+    padding: 2rem 1rem;
+    margin: -1rem 2rem 2rem 2rem;
 
 }
 .tabla2 p{
-    font-size: 18pt;
+    font-size: 14pt;
     color: darkblue;
+}
+tabla2 div{
+    padding: 1rem;
+    margin: 1rem;
 }
 .enlace-discreto{
     color:inherit;

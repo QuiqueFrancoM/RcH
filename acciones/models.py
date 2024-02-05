@@ -12,8 +12,8 @@ class persona(models.Model):
         return ali
 
 class acciones(models.Model):
-    titulo = models.CharField(max_length=30)
-    origen = models.CharField(max_length=30, null=True)
+    titulo = models.CharField(max_length=50)
+    origen = models.CharField(max_length=50, null=True)
     creador = models.ForeignKey(persona, on_delete=models.DO_NOTHING, null=True, related_name='creador')
     fecha_creacion = models.DateField(auto_now_add=True)
     fecha_modificacion = models.DateField(auto_now=True)
@@ -23,7 +23,7 @@ class acciones(models.Model):
     prioridad = models.IntegerField(default=10, null=True)
     fecha_prog_inicio = models.DateField(null=True, blank=True)
     fecha_prog_fin = models.DateField(null=True, blank=True)
-
     foto = models.ImageField(upload_to='./static/images/acciones', null=True, blank=True)
     def __str__(self):
-        return self.titulo
+        a =  str(self.pk) + ".- "+ self.titulo
+        return a
